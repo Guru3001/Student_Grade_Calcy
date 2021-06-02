@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Grade Calcy</title>
+</head>
+
+<body>
+    <main>
+        <section class="glass">
+            <div class="left">
+                <h1>Student<br>Grade<br>Calcy</h1>
+            </div>
+            <div class="right">
+                <div class="input">
+                    <input type="text" placeholder="ENGLISH" id="eng"><br>
+                    <input type="text" placeholder="MATHS" id="maths"><br>
+                    <input type="text" placeholder="PHYSICS" id="phy"><br>
+                    <input type="text" placeholder="CHEMISTRY" id="chem"><br>
+                    <input type="text" placeholder="COMPUTER" id="comp"><br>
+                    <input type="button" value="SHOW RESULT" class="btn" onclick="calcy()">
+                </div>
+                <div id="show">The result will be displayed here.</div>
+            </div>
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <script>
+        const calcy = () =>{
+            let eng = document.getElementById('eng').value;
+            let maths = document.getElementById('maths').value;
+            let phy = document.getElementById('phy').value;
+            let comp = document.getElementById('comp').value;
+
+            let grades = '';
+
+            let total = parseFloat(eng) + parseFloat(maths) + parseFloat(phy) + parseFloat(comp);
+
+            let perc = (total / 500) * 100;
+
+            if (perc <= 100 && perc >= 80) {
+                grades = 'A';
+            }
+            else if (perc <= 79 && perc >= 60) {
+                grades = 'B';
+            }
+            else if (perc <= 59 && perc >= 40) {
+                grades = 'C';
+            }
+            else {
+                grades = 'F';
+            }
+
+            if (perc >= 39.5) {
+                document.getElementById('show').innerHTML = `Out of 500 your total is ${total} and percentage is ${perc}%. Your grade is ${grades}. You are Pass.`
+            }
+            else {
+                document.getElementById('show').innerHTML = `Out of 500 your total is ${total} and percentage is ${perc}%. Your grade is ${grades}. You are Fail.`
+            }
+        }
+    </script>
+</body>
+</html>

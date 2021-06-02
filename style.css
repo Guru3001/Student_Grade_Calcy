@@ -1,0 +1,211 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Yusei Magic', sans-serif;
+    }
+    
+    main {
+        background: linear-gradient(to right top, rgb(27, 150, 187), rgb(8, 235, 110));
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .glass {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+        min-height: 80vh;
+        width: 65%;
+        border-radius: 20px;
+        z-index: 3;
+        backdrop-filter: blur(1.6rem);
+        display: flex;
+    }
+    
+    .circle1,
+    .circle2 {
+        height: 13rem;
+        width: 13rem;
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+        position: absolute;
+        border-radius: 50%;
+        z-index: 2;
+    }
+    
+    .circle1 {
+        top: 3%;
+        right: 10%;
+    }
+    
+    .circle2 {
+        bottom: 3%;
+        left: 7%;
+    }
+    
+    .left {
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+        border-radius: 20px;
+        box-shadow: 2px 0px 20px grey;
+    }
+    
+    .left h1 {
+        font-size: 60px;
+        text-align: center;
+        animation: beat 0.5s infinite alternate;
+    }
+    
+    @keyframes beat {
+        to {
+            transform: scale(1.1);
+        }
+    }
+    
+    .right {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .input {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+        height: 55vh;
+        width: 25vw;
+        padding: 10px 65px;
+        border-radius: 20px;
+        position: absolute;
+        margin-bottom: 80px;
+        box-shadow: 6px 6px 20px grey;
+    }
+    
+    input {
+        margin: 10px;
+        height: 29px;
+        border-radius: 20px;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Sriracha', cursive;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+        border: none;
+        box-shadow: 3px 2.5px 12px grey;
+    }
+    
+    .btn {
+        margin-top: 40px;
+        width: 70%;
+        font-size: 15px;
+        margin-left: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Yusei Magic', sans-serif;
+        cursor: pointer;
+    }
+    
+    .btn:hover {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    }
+    
+    #show {
+        position: absolute;
+        bottom: 15px;
+        text-align: center;
+        padding: 3px 20px;
+        font-size: 19px;
+        font-family: 'Sriracha', cursive;
+    }
+    
+    @media screen and (max-width:1266px) {
+        .circle1,
+        .circle2 {
+            height: 7rem;
+            width: 7rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+            position: absolute;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .circle1 {
+            top: 6px;
+            right: 10px;
+        }
+        .circle2 {
+            left: 10px;
+            bottom: 4px;
+        }
+        .glass {
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+            height: 90vh;
+            width: 70%;
+            border-radius: 20px;
+            z-index: 3;
+            backdrop-filter: blur(1.6rem);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .left {
+            flex-basis: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            border-radius: 20px;
+            width: 100%;
+            box-shadow: 2px 0px 20px grey;
+            position: absolute;
+            height: 33vh;
+        }
+        .right {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            bottom: 160px;
+        }
+        .left h1 {
+            font-size: 30px;
+            text-align: center;
+            animation: beat 0.5s infinite alternate;
+        }
+        .input {
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+            height: 43vh;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 6px 6px 20px grey;
+        }
+        input {
+            margin-bottom: 0px;
+            height: 29px;
+            border-radius: 20px;
+            font-size: 16px;
+            padding: 0px 90px;
+            text-align: center;
+            font-family: 'Sriracha', cursive;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+            border: none;
+            box-shadow: 3px 2.5px 12px grey;
+        }
+        .btn {
+            position: absolute;
+            width: 10%;
+            font-size: 12px;
+            bottom: 10px;
+            left: 23%;
+            text-align: center;
+        }
+        .show {
+            position: absolute;
+            text-align: center;
+        }
+    }
